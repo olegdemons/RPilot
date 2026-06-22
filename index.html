@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0a0d09">
   <title>Постовой | Помощник армии RMRP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="laws.css">
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
@@ -26,6 +30,7 @@
         <button class="nav-button active" data-tab="shift" type="button">Смена</button>
         <button class="nav-button" data-tab="codes" type="button">Коды</button>
         <button class="nav-button" data-tab="optimization" type="button">Оптимизация ПК</button>
+        <button class="nav-button" data-tab="laws" type="button">Законодательство</button>
         <button class="nav-button gated-tab" id="earnings-tab-button" data-tab="earnings" type="button" hidden>Способы заработка</button>
         <button class="nav-button" data-tab="settings" type="button">Настройки</button>
       </nav>
@@ -284,6 +289,32 @@
         </div>
       </section>
 
+      <section class="tab-page" id="laws" data-page="laws">
+        <div class="page-heading">
+          <h2>Законодательство</h2>
+          <p>Шпаргалка по статьям: КоАП, УК РФ и Процессуальный кодекс. Режимы «Широкий» и «Квадрат» умещают все статьи на одном экране.</p>
+        </div>
+        <div class="laws-toolbar">
+          <div class="laws-search-wrap">
+            <span aria-hidden="true">🔍</span>
+            <input id="laws-search" type="text" placeholder="Поиск статьи…">
+          </div>
+          <div id="laws-modes">
+            <button data-lmode="list" class="laws-mode-btn active" type="button">📜 Список</button>
+            <button data-lmode="rect" class="laws-mode-btn" type="button">🖥️ Широкий</button>
+            <button data-lmode="square" class="laws-mode-btn" type="button">🔲 Квадрат</button>
+          </div>
+        </div>
+        <div class="laws-legend">
+          <span><span class="lg-fine">30к</span> штраф</span>
+          <span><span class="lg-lic">лишение</span> штраф <b>или</b> лишение прав (на усмотрение ГИБДД)</span>
+          <span><span class="lg-star">★</span> = 7 дней лишения свободы (срок отбывания)</span>
+        </div>
+        <div id="laws-fitwrap"><div id="laws-content"></div></div>
+        <p id="laws-noresult" hidden>Ничего не найдено 🔍</p>
+        <div class="laws-note">⚠️ ВСРФ: <b>ФЗ «Об обороне»</b> и другие федеральные законы будут добавлены после получения файлов. ФЗ «О полиции» в этой организации не отображается (только полиция, ГИБДД, ЦОДД).</div>
+      </section>
+
       <section class="tab-page" id="settings" data-page="settings">
         <div class="page-heading">
           <div><p class="eyebrow">Персонализация</p><h1>Настройки</h1></div>
@@ -473,5 +504,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="app.js"></script>
+  <script src="laws-data.js"></script>
+  <script src="laws.js"></script>
 </body>
 </html>

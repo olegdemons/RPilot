@@ -1401,7 +1401,7 @@ async function init() {
   updateClockAndTimer();
   bindEvents();
   const hash = location.hash.replace("#", "");
-  if (["shift", "codes", "optimization", "settings"].includes(hash)) switchTab(hash);
+  if (["shift", "codes", "optimization", "laws", "settings"].includes(hash)) switchTab(hash);
   if (hash === "earnings") {
     if (hasEarningsAccess()) switchTab("earnings");
     else history.replaceState(null, "", "#shift");
